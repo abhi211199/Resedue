@@ -9,8 +9,11 @@ public class users{
     private String wt;
     private String sell;
     private String ref;
+    private String status;
 
-    public users(String name, String address, String mob, String id, String wt, String sell, String ref) {
+
+
+    public users(String name, String address, String mob, String id, String wt, String sell, String ref, String status) {
         this.name = name;
         this.address = address;
         this.mob = mob;
@@ -18,6 +21,7 @@ public class users{
         this.wt = wt;
         this.sell = sell;
         this.ref = ref;
+        this.status = status;
     }
 
     public users() {
@@ -80,5 +84,12 @@ public class users{
         this.ref = ref;
     }
 
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
 
 }

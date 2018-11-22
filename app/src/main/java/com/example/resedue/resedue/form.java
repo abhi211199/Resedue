@@ -67,6 +67,7 @@ public class form extends AppCompatActivity {
         user.setName(name.getText().toString());
         user.setWt(wt.getText().toString());
         user.setSell(s.toString());
+        user.setStatus("PENDING");
     }
 
     //adding values in database

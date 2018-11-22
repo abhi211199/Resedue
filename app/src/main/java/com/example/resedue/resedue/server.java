@@ -7,6 +7,7 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.widget.Switch;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -17,7 +18,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class server extends AppCompatActivity {
 
     FirebaseDatabase database;
     DatabaseReference ref;
@@ -26,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_server);
         recyclerView = (RecyclerView) findViewById(R.id.recycle);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -46,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
                     String status= val.getStatus();
                     String mob = val.getMob();
                     String sell = val.getSell();
-                    String ref;
+                    String ref=val.getRef();
                     ref=dataSnapshot1.getKey();
                     String wt=val.getWt();
 
@@ -60,8 +61,8 @@ public class MainActivity extends AppCompatActivity {
                     //user.setKey(dataSnapshot1.getKey());
                     list.add(user);
                 }
-                RecyclerAdapter recyclerAdapter = new RecyclerAdapter(MainActivity.this,list);
-                RecyclerView.LayoutManager recyce = new GridLayoutManager(MainActivity.this,1);
+                RecyclerAdapter1 recyclerAdapter = new RecyclerAdapter1(server.this,list);
+                RecyclerView.LayoutManager recyce = new GridLayoutManager(server.this,1);
                 recyclerView.setLayoutManager(recyce);
                 recyclerView.setItemAnimator( new DefaultItemAnimator());
                 recyclerView.setAdapter(recyclerAdapter);
@@ -72,6 +73,5 @@ public class MainActivity extends AppCompatActivity {
                 Log.w("Hello", "Failed to read value.", error.toException());
             }
         });
-
     }
 }

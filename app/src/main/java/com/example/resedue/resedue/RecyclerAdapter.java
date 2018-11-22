@@ -44,30 +44,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyHold
         holder.wt.setText("Weight of Grains:"+mylist.getWt());
         holder.ph.setText("Contact No.:"+mylist.getMob());
         holder.sell.setText("Priority of Seller :  "+mylist.getSell());
-        //String url=mylist.getUrl();
 
-//        set(url);
-//        Toast.makeText(context, url, Toast.LENGTH_SHORT).show();
-
-
-//        holder.cardView.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//
-//                Intent intent = new Intent(context,displayTask.class);
-//
-//                // passing data to the book activity
-//                intent.putExtra("Task_Name",list.get(position).getTask_name());
-//                intent.putExtra("Date",list.get(position).getDate());
-//                intent.putExtra("Time1",list.get(position).getTime1());
-//                intent.putExtra("Time2",list.get(position).getTime2());
-//                intent.putExtra("Location",list.get(position).getLocation());
-//                intent.putExtra("Url",list.get(position).getUrl());
-//                intent.putExtra("Key",list.get(position).getKey());
-//                context.startActivity(intent);
-//
-//            }
-//        });
     }
 
     @Override

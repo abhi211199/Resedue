@@ -83,7 +83,7 @@ public class form extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 getVal();
-                ref.child("123").child(key).setValue(user);
+                ref.child(id.getText().toString()).child(key).setValue(user);
                 Toast.makeText(form.this,"success".toString(),Toast.LENGTH_SHORT).show();
             }
 

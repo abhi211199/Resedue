@@ -71,6 +71,7 @@ public class MainActivity extends AppCompatActivity {
                     user.setWt(wt);
                     //user.setKey(dataSnapshot1.getKey());
                     list.add(user);
+                    tx.setText("");
                 }
                 RecyclerAdapter recyclerAdapter = new RecyclerAdapter(MainActivity.this,list);
                 RecyclerView.LayoutManager recyce = new GridLayoutManager(MainActivity.this,1);

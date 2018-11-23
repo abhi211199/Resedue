@@ -9,6 +9,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.widget.Switch;
+import android.widget.TextView;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -24,12 +25,14 @@ public class server extends AppCompatActivity {
     FirebaseDatabase database;
     DatabaseReference ref;
     List<users> list;
+    TextView tx;
     RecyclerView recyclerView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_server);
         recyclerView = (RecyclerView) findViewById(R.id.recycle);
+        tx=(TextView)findViewById(R.id.tx);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         database = FirebaseDatabase.getInstance();
@@ -62,6 +65,7 @@ public class server extends AppCompatActivity {
                     user.setWt(wt);
                     //user.setKey(dataSnapshot1.getKey());
                     list.add(user);
+                    tx.setText("");
                 }
                 RecyclerAdapter1 recyclerAdapter = new RecyclerAdapter1(server.this,list);
                 RecyclerView.LayoutManager recyce = new GridLayoutManager(server.this,1);

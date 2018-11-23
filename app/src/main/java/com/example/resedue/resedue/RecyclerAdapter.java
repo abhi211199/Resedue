@@ -2,6 +2,7 @@ package com.example.resedue.resedue;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
@@ -44,7 +45,12 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyHold
         holder.wt.setText("Weight of Grains:"+mylist.getWt());
         holder.ph.setText("Contact No.:"+mylist.getMob());
         holder.sell.setText("Priority of Seller :  "+mylist.getSell());
-
+        if(mylist.getStatus().equals("REJECTED"))
+        {
+            holder.status.setTextColor(Color.RED);
+        }
+        else if(mylist.getStatus().equals("PENDING"))holder.status.setTextColor(Color.GRAY);
+        else if(mylist.getStatus().equals("ACCEPTED"))holder.status.setTextColor(Color.GREEN);
     }
 
     @Override

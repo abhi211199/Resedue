@@ -62,36 +62,45 @@ public class form extends AppCompatActivity {
     //getting values of form
     public void getVal()
     {
-        user.setAddress(name.getText().toString());
+        user.setAddress(add.getText().toString());
         user.setMob(mob.getText().toString());
         user.setName(name.getText().toString());
         user.setWt(wt.getText().toString());
-        user.setSell(s.toString());
+        user.setSell(s);
         user.setStatus("PENDING");
     }
 
-    //adding values in database
-    public void add(View view)
+    public boolean check()
     {
-        final Date currentTime = Calendar.getInstance().getTime();
-        getVal();
-        database=FirebaseDatabase.getInstance();
-        ref=database.getReference("users");
-        key = ref.push().getKey();
+        if(((name.getText().toString()).isEmpty())||((mob.getText().toString()).isEmpty())||((add.getText().toString()).isEmpty())||((wt.getText().toString()).isEmpty())||(s.equals("Please Enter choice of selling agent"))) {
+            return true;
+        }
+        return false;
+    }
+    //adding values in database
+    public void add(View view) {
+        if (check()) {
+            Toast.makeText(form.this, "Please enter proper details!!", Toast.LENGTH_SHORT).show();
+        } else {
+            getVal();
+            database = FirebaseDatabase.getInstance();
+            ref = database.getReference("users");
+            key = ref.push().getKey();
 //        Toast.makeText(this,key,Toast.LENGTH_LONG).show();
-        ref.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                getVal();
-                ref.child(id.getText().toString()).child(key).setValue(user);
-                Toast.makeText(form.this,"success".toString(),Toast.LENGTH_SHORT).show();
-            }
+            ref.addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                    getVal();
+                    ref.child(id.getText().toString()).child(key).setValue(user);
+                    Toast.makeText(form.this, "Data Successfully entered!!", Toast.LENGTH_SHORT).show();
+                }
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
 
-            }
-        });
+                }
+            });
 
+        }
     }
 }

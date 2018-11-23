@@ -9,6 +9,7 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -76,6 +77,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onCancelled(DatabaseError error) {
+                Toast.makeText(MainActivity.this, "No Entries found!!", Toast.LENGTH_SHORT).show();
                 Log.w("Hello", "Failed to read value.", error.toException());
             }
         });

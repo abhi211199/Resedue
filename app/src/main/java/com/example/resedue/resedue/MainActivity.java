@@ -9,6 +9,7 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
@@ -25,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
     FirebaseDatabase database;
     DatabaseReference ref;
     EditText t;
+    TextView tx;
     List<users> list;
     RecyclerView recyclerView;
     @Override
@@ -32,9 +34,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         t=(EditText)findViewById(R.id.id);
+        tx=(TextView)findViewById(R.id.tx);
     }
     public void fx(View view)
     {
+        tx.setText("Searching...");
         recyclerView = (RecyclerView) findViewById(R.id.recycle);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));

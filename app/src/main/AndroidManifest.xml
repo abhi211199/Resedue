@@ -32,7 +32,8 @@
             android:name=".form"
             android:configChanges="orientation"
             android:screenOrientation="portrait" />
-        <activity android:name=".client"></activity>
+        <activity android:name=".client" />
+        <activity android:name=".private1"></activity>
     </application>
 
 </manifest>

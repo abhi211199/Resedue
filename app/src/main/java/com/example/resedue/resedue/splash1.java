@@ -29,7 +29,7 @@ public class splash1 extends AppCompatActivity {
             public void run() {
                 // This method will be executed once the timer is over
                 // Start your app main activity
-                Intent i = new Intent(splash1.this, server.class);//toggle for server
+                Intent i = new Intent(splash1.this, private1.class);//toggle for server(government) and private
                 startActivity(i);
 
                 // close this activity

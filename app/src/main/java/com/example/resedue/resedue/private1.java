@@ -20,7 +20,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
-public class server extends AppCompatActivity {
+public class private1 extends AppCompatActivity {
 
     FirebaseDatabase database;
     DatabaseReference ref;
@@ -64,12 +64,12 @@ public class server extends AppCompatActivity {
                     user.setRef(ref);
                     user.setWt(wt);
                     //user.setKey(dataSnapshot1.getKey());
-                    if(sell.equals("Government"))
-                    {list.add(user);
+                    if(sell.equals("Private"))
+                    { list.add(user);
                     tx.setText("");}
                 }
-                RecyclerAdapter1 recyclerAdapter = new RecyclerAdapter1(server.this,list);
-                RecyclerView.LayoutManager recyce = new GridLayoutManager(server.this,1);
+                RecyclerAdapter1 recyclerAdapter = new RecyclerAdapter1(private1.this,list);
+                RecyclerView.LayoutManager recyce = new GridLayoutManager(private1.this,1);
                 recyclerView.setLayoutManager(recyce);
                 recyclerView.setItemAnimator( new DefaultItemAnimator());
                 recyclerView.setAdapter(recyclerAdapter);

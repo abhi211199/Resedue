@@ -36,7 +36,7 @@ public class server extends AppCompatActivity {
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         database = FirebaseDatabase.getInstance();
-        ref = database.getReference("users").child("123");
+        ref = database.getReference("users").child("208160172658");
 
         ref.addValueEventListener(new ValueEventListener() {
             @Override

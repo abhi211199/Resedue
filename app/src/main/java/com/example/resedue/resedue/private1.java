@@ -30,13 +30,13 @@ public class private1 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_server);
+        setContentView(R.layout.activity_private1);
         recyclerView = (RecyclerView) findViewById(R.id.recycle);
         tx=(TextView)findViewById(R.id.tx);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         database = FirebaseDatabase.getInstance();
-        ref = database.getReference("users").child("123");
+        ref = database.getReference("users").child("208160172658");
 
         ref.addValueEventListener(new ValueEventListener() {
             @Override

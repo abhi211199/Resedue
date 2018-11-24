@@ -65,8 +65,8 @@ public class RecyclerAdapter1 extends RecyclerView.Adapter<RecyclerAdapter1.MyHo
                 FirebaseDatabase database;
                 DatabaseReference ref;
                 database = FirebaseDatabase.getInstance();
-                ref = database.getReference("users").child("123").child(mylist.getRef());
-                user.setAddress(mylist.getName());
+                ref = database.getReference("users").child("208160172658").child(mylist.getRef());
+                user.setAddress(mylist.getAddress());
                 user.setMob(mylist.getMob());
                 user.setName(mylist.getName());
                 user.setWt(mylist.getWt());
@@ -82,8 +82,8 @@ public class RecyclerAdapter1 extends RecyclerView.Adapter<RecyclerAdapter1.MyHo
                 FirebaseDatabase database;
                 DatabaseReference ref;
                 database = FirebaseDatabase.getInstance();
-                ref = database.getReference("users").child("123").child(mylist.getRef());
-                user.setAddress(mylist.getName());
+                ref = database.getReference("users").child("208160172658").child(mylist.getRef());
+                user.setAddress(mylist.getAddress());
                 user.setMob(mylist.getMob());
                 user.setName(mylist.getName());
                 user.setWt(mylist.getWt());
